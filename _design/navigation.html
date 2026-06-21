@@ -1,0 +1,119 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Navigation — DCC Design System</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #F6F6F6; color: #111; }
+  h2 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; padding: 24px 32px 12px; }
+
+  /* Light nav */
+  .nav-wrap { background: #fff; border-bottom: 1px solid #E2E2E2; box-shadow: 0 1px 12px rgba(0,0,0,0.06); }
+  .nav { height: 70px; max-width: 1160px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .nav-brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; text-decoration: none; }
+  .nav-brand img { width: 40px; height: 40px; object-fit: contain; }
+  .nav-brand-name { font-size: 0.875rem; font-weight: 700; color: #111; text-transform: uppercase; letter-spacing: 0.03em; display: block; }
+  .nav-brand-sub { font-size: 0.68rem; color: #8A8A8A; text-transform: uppercase; letter-spacing: 0.05em; display: block; }
+  .nav-links { display: flex; align-items: center; gap: 2px; flex: 1; justify-content: center; }
+  .nav-link { font-size: 0.875rem; font-weight: 500; color: #5A5A5A; padding: 0.4rem 0.65rem; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+  .nav-link:hover, .nav-link.active { color: #C41E1E; background: rgba(196,30,30,0.08); }
+  .nav-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .theme-toggle { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #5A5A5A; background: #F0F0F0; border: 1px solid #E2E2E2; cursor: pointer; }
+  .theme-toggle:hover { color: #C41E1E; border-color: #C41E1E; }
+  .btn-nav { background: #C41E1E; color: #fff; border: none; padding: 0.5rem 1.1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+
+  /* Dark nav */
+  .nav-wrap-dark { background: #1C1C1C; border-bottom: 1px solid #2E2E2E; box-shadow: 0 1px 12px rgba(0,0,0,0.3); }
+  .nav-dark .nav-brand-name { color: #EDEDED; }
+  .nav-dark .nav-brand-sub  { color: #686868; }
+  .nav-dark .nav-link { color: #A0A0A0; }
+  .nav-dark .nav-link:hover { color: #E53535; background: rgba(229,53,53,0.1); }
+  .nav-dark .theme-toggle { color: #A0A0A0; background: #242424; border-color: #2E2E2E; }
+
+  /* Mobile nav preview */
+  .mobile-preview { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; margin: 0 32px 32px; overflow: hidden; max-width: 360px; }
+  .mobile-nav-header { height: 60px; background: #fff; border-bottom: 1px solid #E2E2E2; display: flex; align-items: center; padding: 0 16px; justify-content: space-between; }
+  .hamburger-icon { display: flex; flex-direction: column; gap: 5px; }
+  .hamburger-icon span { display: block; width: 22px; height: 2px; background: #111; border-radius: 2px; }
+  .hamburger-icon.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger-icon.open span:nth-child(2) { opacity: 0; }
+  .hamburger-icon.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav-links a { display: block; padding: 12px 20px; font-size: 0.95rem; font-weight: 500; color: #5A5A5A; border-left: 3px solid transparent; text-decoration: none; }
+  .mobile-nav-links a:hover, .mobile-nav-links a.active { color: #C41E1E; background: #F6F6F6; border-left-color: #C41E1E; }
+  .mobile-nav-links .sub a { padding-left: 36px; font-size: 0.875rem; }
+</style>
+</head>
+<body>
+  <h2>Light Mode — Desktop Nav</h2>
+  <div class="nav-wrap" style="margin-bottom:32px;">
+    <div class="nav">
+      <a href="#" class="nav-brand">
+        <img src="../images/dcc-logo.png" alt="DCC">
+        <div><span class="nav-brand-name">Dominion Chihuahua Club</span><span class="nav-brand-sub">Inc — Est. 1964</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="#" class="nav-link active">Home</a>
+        <a href="#" class="nav-link">About Chihuahuas</a>
+        <a href="#" class="nav-link">Membership</a>
+        <a href="#" class="nav-link">Events</a>
+        <a href="#" class="nav-link">Show Results</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">AGM</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Dark Mode — Desktop Nav</h2>
+  <div class="nav-wrap-dark" style="margin-bottom:32px;">
+    <div class="nav nav-dark">
+      <a href="#" class="nav-brand">
+        <img src="../images/dcc-logo.png" alt="DCC">
+        <div><span class="nav-brand-name">Dominion Chihuahua Club</span><span class="nav-brand-sub">Inc — Est. 1964</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="#" class="nav-link active" style="color:#E53535;background:rgba(229,53,53,0.1);">Home</a>
+        <a href="#" class="nav-link">About Chihuahuas</a>
+        <a href="#" class="nav-link">Membership</a>
+        <a href="#" class="nav-link">Events</a>
+        <a href="#" class="nav-link">Show Results</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">AGM</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Mobile Nav (open state)</h2>
+  <div class="mobile-preview">
+    <div class="mobile-nav-header">
+      <a href="#" class="nav-brand" style="gap:10px;text-decoration:none;">
+        <img src="../images/dcc-logo.png" alt="" style="width:34px;height:34px;object-fit:contain;">
+        <span style="font-size:0.8rem;font-weight:700;color:#111;text-transform:uppercase;">DCC</span>
+      </a>
+      <div class="hamburger-icon open"><span></span><span></span><span></span></div>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#">About Chihuahuas</a>
+      <div class="sub"><a href="#">Buying a Chihuahua</a></div>
+      <a href="#">Membership</a>
+      <a href="#">Events</a>
+      <a href="#">Show Results</a>
+      <a href="#">Blog</a>
+      <a href="#">AGM</a>
+    </div>
+  </div>
+</body>
+</html>

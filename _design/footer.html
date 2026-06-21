@@ -1,0 +1,123 @@
+<!-- @dsCard group="Page Sections" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Footer — DCC Design System</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; }
+  .label { padding: 16px 32px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; background: #E2E2E2; }
+
+  footer { background: #F6F6F6; border-top: 1px solid #E2E2E2; padding: 48px 0 24px; }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand img { width: 52px; margin-bottom: 16px; }
+  .footer-brand p { font-size: 0.875rem; color: #5A5A5A; max-width: 280px; line-height: 1.65; }
+  .footer-col h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #111; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col li a { font-size: 0.875rem; color: #5A5A5A; text-decoration: none; }
+  .footer-col li a:hover { color: #C41E1E; }
+  .footer-bottom { padding-top: 20px; border-top: 1px solid #E2E2E2; display: flex; align-items: center; justify-content: space-between; }
+  .footer-bottom p { font-size: 0.78rem; color: #8A8A8A; }
+  .footer-bottom a { color: #8A8A8A; text-decoration: none; }
+  .footer-bottom a:hover { color: #C41E1E; }
+
+  footer.dark { background: #191919; border-top-color: #2E2E2E; }
+  footer.dark .footer-col h4 { color: #EDEDED; }
+  footer.dark .footer-brand p { color: #A0A0A0; }
+  footer.dark .footer-col li a { color: #A0A0A0; }
+  footer.dark .footer-bottom { border-top-color: #2E2E2E; }
+  footer.dark .footer-bottom p { color: #686868; }
+  footer.dark .footer-bottom a { color: #686868; }
+</style>
+</head>
+<body>
+  <div class="label">Light Mode</div>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/dcc-logo.png" alt="DCC Logo">
+          <p>The Dominion Chihuahua Club Inc is New Zealand's only South Island Chihuahua specialty club. Affiliated with Dogs New Zealand and proud supporters of NZ Chihuahua Rescue.</p>
+          <p style="margin-top:10px;font-size:0.8rem;color:#8A8A8A;">📧 <a href="mailto:dominionchiclub@gmail.com" style="color:#8A8A8A;">dominionchiclub@gmail.com</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Chihuahuas</a></li>
+            <li><a href="#">Buying a Chihuahua</a></li>
+            <li><a href="#">Membership</a></li>
+            <li><a href="#">Coming Events</a></li>
+            <li><a href="#">Show Results</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">AGM</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Join Us</h4>
+          <ul>
+            <li><a href="#">Become a Member</a></li>
+            <li><a href="#">DCC Constitution</a></li>
+            <li><a href="#">Code of Ethics</a></li>
+          </ul>
+          <h4 style="margin-top:24px;">Affiliates</h4>
+          <ul>
+            <li><a href="#">Dogs New Zealand</a></li>
+            <li><a href="#">NZ Chihuahua Rescue</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2015–2025 Dominion Chihuahua Club Inc. All rights reserved.</p>
+        <p>Site design by <a href="#">DCC Web Team</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="label">Dark Mode</div>
+  <footer class="dark">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/dcc-logo.png" alt="DCC Logo">
+          <p>The Dominion Chihuahua Club Inc is New Zealand's only South Island Chihuahua specialty club. Affiliated with Dogs New Zealand and proud supporters of NZ Chihuahua Rescue.</p>
+          <p style="margin-top:10px;font-size:0.8rem;color:#686868;">📧 <a href="mailto:dominionchiclub@gmail.com" style="color:#686868;">dominionchiclub@gmail.com</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Chihuahuas</a></li>
+            <li><a href="#">Buying a Chihuahua</a></li>
+            <li><a href="#">Membership</a></li>
+            <li><a href="#">Coming Events</a></li>
+            <li><a href="#">Show Results</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">AGM</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Join Us</h4>
+          <ul>
+            <li><a href="#">Become a Member</a></li>
+            <li><a href="#">DCC Constitution</a></li>
+            <li><a href="#">Code of Ethics</a></li>
+          </ul>
+          <h4 style="margin-top:24px;">Affiliates</h4>
+          <ul>
+            <li><a href="#">Dogs New Zealand</a></li>
+            <li><a href="#">NZ Chihuahua Rescue</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2015–2025 Dominion Chihuahua Club Inc. All rights reserved.</p>
+        <p>Site design by <a href="#">DCC Web Team</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cards — DCC Design System</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #F6F6F6; padding: 40px; color: #111; }
+  h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 40px; }
+  .section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 40px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-bottom: 40px; }
+
+  /* Feature card */
+  .card { background: #fff; border: 1px solid #E2E2E2; border-radius: 16px; padding: 28px; position: relative; overflow: hidden; transition: all 0.2s; }
+  .card:hover { border-color: rgba(196,30,30,0.3); box-shadow: 0 8px 28px rgba(0,0,0,0.12); transform: translateY(-3px); }
+  .card-accent-bar { position:absolute; top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;background:linear-gradient(90deg,#C41E1E 0%,#1A6B1A 100%);opacity:0;transition:opacity 0.2s; }
+  .card:hover .card-accent-bar { opacity:1; }
+  .card-icon { width:48px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.4rem; }
+  .icon-red   { background: rgba(196,30,30,0.1); }
+  .icon-green { background: rgba(26,107,26,0.1); }
+  .icon-amber { background: rgba(245,158,11,0.1); }
+  .card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+  .card p  { font-size: 0.88rem; color: #5A5A5A; line-height: 1.65; margin-bottom: 16px; }
+  .btn-ghost { background:none;border:none;color:#C41E1E;font-weight:600;font-size:0.88rem;cursor:pointer;display:flex;align-items:center;gap:6px;padding:0; }
+
+  /* Post card */
+  .post-card { background:#fff;border:1px solid #E2E2E2;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:all 0.2s; }
+  .post-card:hover { box-shadow:0 8px 28px rgba(0,0,0,0.12);transform:translateY(-3px); }
+  .post-card-body { padding:20px;flex:1;display:flex;flex-direction:column; }
+  .post-meta { display:flex;align-items:center;gap:8px;margin-bottom:8px; }
+  .post-date { font-size:0.75rem;color:#8A8A8A;font-weight:500; }
+  .post-tag { font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#C41E1E;background:rgba(196,30,30,0.08);padding:2px 8px;border-radius:99px; }
+  .post-card h3 { font-size:0.95rem;font-weight:700;margin-bottom:8px;line-height:1.4; }
+  .post-card p { font-size:0.84rem;color:#5A5A5A;flex:1;margin-bottom:12px; }
+
+  /* Event card */
+  .event-card { display:flex;gap:16px;background:#fff;border:1px solid #E2E2E2;border-radius:16px;padding:20px;transition:all 0.2s; }
+  .event-card:hover { box-shadow:0 4px 16px rgba(0,0,0,0.08);border-color:rgba(196,30,30,0.3); }
+  .event-date-block { flex-shrink:0;width:56px;text-align:center;background:#C41E1E;color:#fff;border-radius:8px;padding:8px; }
+  .month { font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;opacity:0.85; }
+  .day { font-family:'Playfair Display',serif;font-size:1.6rem;line-height:1; }
+  .event-info h3 { font-size:0.95rem;font-weight:700;margin-bottom:4px; }
+  .event-info p { font-size:0.84rem;color:#5A5A5A;margin-bottom:8px; }
+  .event-meta { display:flex;gap:16px;font-size:0.76rem;color:#8A8A8A;font-weight:500; }
+
+  /* Info box */
+  .info-box { background:#fff;border:1px solid #E2E2E2;border-radius:16px;padding:24px; }
+  .info-box h3 { font-size:1rem;font-weight:700;margin-bottom:16px; }
+  .info-row { display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #E2E2E2; }
+  .info-row:last-child { border-bottom:none; }
+  .info-row-label { font-size:0.78rem;font-weight:600;color:#5A5A5A;min-width:100px;padding-top:2px; }
+  .info-row-value { font-size:0.9rem;color:#111; }
+</style>
+</head>
+<body>
+  <h1>Cards</h1>
+  <p class="subtitle">Feature cards, post cards, event cards, and info boxes.</p>
+
+  <div class="section-label">Feature Cards</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-accent-bar"></div>
+      <div class="card-icon icon-red">🏆</div>
+      <h3>Championship Shows</h3>
+      <p>Annual championship and open shows sanctioned by Dogs New Zealand. Compete, spectate, or soak up the atmosphere.</p>
+      <button class="btn-ghost">View Past Results <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div>
+    <div class="card">
+      <div class="card-accent-bar"></div>
+      <div class="card-icon icon-green">🐕</div>
+      <h3>Playgroups</h3>
+      <p>Regular small dog playgroups where Chihuahuas can socialise, run, and be their tiny, spirited selves.</p>
+      <button class="btn-ghost">See Events <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div>
+    <div class="card">
+      <div class="card-accent-bar"></div>
+      <div class="card-icon icon-amber">🤝</div>
+      <h3>Membership</h3>
+      <p>Join a welcoming community of pet owners, show competitors, and rescue supporters. Just $20/year.</p>
+      <button class="btn-ghost">Join Today <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div>
+  </div>
+
+  <div class="section-label">Post Cards</div>
+  <div class="grid">
+    <article class="post-card">
+      <div class="post-card-body">
+        <div class="post-meta"><span class="post-date">Apr 26, 2025</span><span class="post-tag">AGM</span></div>
+        <h3>2025 Annual General Meeting — Call for Nominations</h3>
+        <p>We are now accepting nominations for committee positions and notices of motion for the 2025 AGM.</p>
+        <button class="btn-ghost" style="font-size:0.84rem;">Read More <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+    </article>
+    <article class="post-card">
+      <div class="post-card-body">
+        <div class="post-meta"><span class="post-date">Jul 1, 2023</span><span class="post-tag">Event</span></div>
+        <h3>Winter Wonderland Was a Blast!</h3>
+        <p>Over 30 dogs entered with lots of prizes for everyone at our Annual Winter Wonderland Festival.</p>
+        <button class="btn-ghost" style="font-size:0.84rem;">Read More <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+    </article>
+    <article class="post-card">
+      <div class="post-card-body">
+        <div class="post-meta"><span class="post-date">Aug 16, 2023</span><span class="post-tag">Playgroup</span></div>
+        <h3>Playgroup Finds a New Home!</h3>
+        <p>Following the closure of Pet Central, our playgroup has found a fantastic new venue. Come join us!</p>
+        <button class="btn-ghost" style="font-size:0.84rem;">Read More <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+    </article>
+  </div>
+
+  <div class="section-label">Event Cards</div>
+  <div style="display:flex;flex-direction:column;gap:12px;max-width:560px;margin-bottom:40px;">
+    <div class="event-card">
+      <div class="event-date-block"><div class="month">Aug</div><div class="day">14</div></div>
+      <div class="event-info">
+        <h3>Winter Wonderland Festival 2025</h3>
+        <p>Annual fun day for all Chihuahuas — pet show, prizes, activities.</p>
+        <div class="event-meta"><span>📍 Christchurch</span><span>🕒 10am–3pm</span></div>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-date-block"><div class="month">Oct</div><div class="day">18</div></div>
+      <div class="event-info">
+        <h3>DCC Championship Show 2025</h3>
+        <p>NZKC sanctioned championship show. Enter via Dogs NZ.</p>
+        <div class="event-meta"><span>📍 TBC</span><span>🕒 9am start</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Info Box</div>
+  <div style="max-width:360px;">
+    <div class="info-box">
+      <h3>Membership Details</h3>
+      <div class="info-row"><span class="info-row-label">Type</span><span class="info-row-value">Single membership</span></div>
+      <div class="info-row"><span class="info-row-label">Fee</span><span class="info-row-value" style="color:#C41E1E;font-weight:700;font-size:1.1rem;">$20 / year</span></div>
+      <div class="info-row"><span class="info-row-label">Due date</span><span class="info-row-value">1 April annually</span></div>
+      <div class="info-row"><span class="info-row-label">Since</span><span class="info-row-value">1964</span></div>
+    </div>
+  </div>
+</body>
+</html>

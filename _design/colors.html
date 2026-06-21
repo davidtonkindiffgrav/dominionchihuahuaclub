@@ -1,0 +1,78 @@
+<!-- @dsCard group="Foundations" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Colors — DCC Design System</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #F6F6F6; padding: 40px; color: #111; }
+  h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 40px; }
+  .group { margin-bottom: 40px; }
+  .group-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 16px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { width: 100px; }
+  .swatch-color { width: 100px; height: 72px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.08); margin-bottom: 8px; }
+  .swatch-name { font-size: 0.78rem; font-weight: 600; color: #333; }
+  .swatch-hex  { font-size: 0.72rem; color: #888; font-family: monospace; }
+  .divider { border: none; border-top: 1px solid #E2E2E2; margin: 8px 0 24px; }
+</style>
+</head>
+<body>
+  <h1>Colour Palette</h1>
+  <p class="subtitle">Derived from the DCC logo — Red, Green, and neutrals for light &amp; dark themes.</p>
+
+  <div class="group">
+    <div class="group-label">Brand</div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-color" style="background:#C41E1E;"></div><div class="swatch-name">Red</div><div class="swatch-hex">#C41E1E</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#9E1515;"></div><div class="swatch-name">Red Dark</div><div class="swatch-hex">#9E1515</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E53535;"></div><div class="swatch-name">Red Light</div><div class="swatch-hex">#E53535</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1A6B1A;"></div><div class="swatch-name">Green</div><div class="swatch-hex">#1A6B1A</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#115011;"></div><div class="swatch-name">Green Dark</div><div class="swatch-hex">#115011</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#2A8B2A;"></div><div class="swatch-name">Green Light</div><div class="swatch-hex">#2A8B2A</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-label">Light Theme — Backgrounds &amp; Surfaces</div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF; border:1px solid #ddd;"></div><div class="swatch-name">Background</div><div class="swatch-hex">#FFFFFF</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F6F6F6;"></div><div class="swatch-name">Bg Alt</div><div class="swatch-hex">#F6F6F6</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F0F0F0;"></div><div class="swatch-name">Surface 2</div><div class="swatch-hex">#F0F0F0</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E2E2E2;"></div><div class="swatch-name">Border</div><div class="swatch-hex">#E2E2E2</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-label">Light Theme — Text</div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-color" style="background:#111111;"></div><div class="swatch-name">Text</div><div class="swatch-hex">#111111</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#5A5A5A;"></div><div class="swatch-name">Muted</div><div class="swatch-hex">#5A5A5A</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#8A8A8A;"></div><div class="swatch-name">Subtle</div><div class="swatch-hex">#8A8A8A</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-label">Dark Theme — Backgrounds &amp; Surfaces</div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-color" style="background:#111111;"></div><div class="swatch-name">Background</div><div class="swatch-hex">#111111</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#191919;"></div><div class="swatch-name">Bg Alt</div><div class="swatch-hex">#191919</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1C1C1C;"></div><div class="swatch-name">Surface</div><div class="swatch-hex">#1C1C1C</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#242424;"></div><div class="swatch-name">Surface 2</div><div class="swatch-hex">#242424</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#2E2E2E;"></div><div class="swatch-name">Border</div><div class="swatch-hex">#2E2E2E</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-label">Dark Theme — Text</div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-color" style="background:#EDEDED;"></div><div class="swatch-name">Text</div><div class="swatch-hex">#EDEDED</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#A0A0A0;"></div><div class="swatch-name">Muted</div><div class="swatch-hex">#A0A0A0</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#686868;"></div><div class="swatch-name">Subtle</div><div class="swatch-hex">#686868</div></div>
+    </div>
+  </div>
+</body>
+</html>
